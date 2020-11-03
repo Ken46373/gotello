@@ -1,9 +1,27 @@
 package main
 
-import "net"
+import (
+	"time"
+
+	"gobot.io/x/gobot"
+	"gobot.io/x/gobot/platforms/dji/tello"
+)
 
 func main() {
-	conn, _ := net.Dial("udp", "192.168.10.1:8889")
-	conn.Write([]byte("command"))
-	conn.Write([]byte("takeoff"))
+	drone := tello.NewDriver("8889")
+
+	work := func() {
+		drone.TakeOff()
+
+		gobot.After(5*time.Second, func() {
+			drone.Land()
+		})
+	}
+
+	robot := gobot.NewRobot("tello",
+		[]gobot.Connection{},
+		[]gobot.Device{drone},
+		work)
+
+	robot.Start()
 }
