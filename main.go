@@ -1,13 +1,19 @@
 package main
 
 import (
-	"gotello/app/models"
-	"time"
+	"gotello/config"
+	"gotello/utils"
+	"log"
 )
 
 func main() {
-	droneManager := models.NewDroneManager()
-	droneManager.TakeOff()
-	time.Sleep(5 * time.Second)
-	droneManager.Land()
+	utils.LoggingSettings(config.Config.LogFile)
+	log.Println("test")
+
+	/*
+		droneManager := models.NewDroneManager()
+		droneManager.TakeOff()
+		time.Sleep(5 * time.Second)
+		droneManager.Land()
+	*/
 }
