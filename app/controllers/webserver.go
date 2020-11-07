@@ -118,6 +118,10 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 		drone.RightFlip()
 	case "backFlip":
 		drone.BackFlip()
+	case "throwTakeOff":
+		drone.ThrowTakeOff()
+	case "bounce":
+		drone.Bounce()
 	case "speed":
 		drone.Speed = getSpeed(r)
 
