@@ -3,12 +3,21 @@ package controllers
 import (
 	"encoding/json"
 	"fmt"
+	"gotello/app/models"
 	"gotello/config"
 	"html/template"
 	"log"
 	"net/http"
 	"regexp"
 )
+
+var appContext struct {
+	DroneManager *models.DroneManager
+}
+
+func init() {
+	appContext.DroneManager = models.NewDroneManager()
+}
 
 func getTemplate(temp string) (*template.Template, error) {
 	return template.ParseFiles("app/views/layout.html", temp)
@@ -62,6 +71,33 @@ func apiMakeHandler(fn func(w http.ResponseWriter, r *http.Request)) http.Handle
 func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 	command := r.FormValue("command")
 	log.Printf("action=apiCommandHandler command=%s", command)
+	drone := appContext.DroneManager
+	switch command {
+	case "ceaseRotation":
+		drone.CeaseRotation()
+	case "takeOff":
+		drone.TakeOff()
+	case "land":
+		drone.Land()
+	case "hover":
+		drone.Hover()
+	case "up":
+		drone.Up(drone.Speed)
+	case "clockwise":
+		drone.Clockwise(drone.Speed)
+	case "counterClockwise":
+		drone.CounterClockwise(drone.Speed)
+	case "down":
+		drone.Down(drone.Speed)
+	case "forward":
+		drone.Forward(drone.Speed)
+	case "left":
+		drone.Left(drone.Speed)
+	case "right":
+		drone.Right(drone.Speed)
+	case "backward":
+		drone.Backward(drone.Speed)
+	}
 	APIResponse(w, "OK", http.StatusOK)
 }
 

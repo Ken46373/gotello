@@ -12,3 +12,36 @@
 2020/11/06 19:37:59 webserver.go:64: action=apiCommandHandler command=takeOff
 2020/11/06 19:38:02 webserver.go:64: action=apiCommandHandler command=land
 2020/11/06 19:38:02 webserver.go:64: action=apiCommandHandler command=hover
+2020/11/07 18:57:52 webserver.go:73: action=apiCommandHandler command=takeOff
+2020/11/07 18:58:04 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:12 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:19 webserver.go:73: action=apiCommandHandler command=takeOff
+2020/11/07 18:58:22 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:23 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:23 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:24 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:24 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:24 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:25 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:25 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:25 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:25 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:25 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 18:58:29 robot.go:203: Stopping Robot tello ...
+2020/11/07 19:00:30 webserver.go:73: action=apiCommandHandler command=takeOff
+2020/11/07 19:00:41 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 19:00:47 robot.go:203: Stopping Robot tello ...
+2020/11/07 19:07:51 webserver.go:73: action=apiCommandHandler command=takeOff
+2020/11/07 19:07:57 webserver.go:73: action=apiCommandHandler command=left
+2020/11/07 19:07:59 webserver.go:73: action=apiCommandHandler command=hover
+2020/11/07 19:08:01 webserver.go:73: action=apiCommandHandler command=right
+2020/11/07 19:08:06 webserver.go:73: action=apiCommandHandler command=hover
+2020/11/07 19:08:08 webserver.go:73: action=apiCommandHandler command=up
+2020/11/07 19:08:11 webserver.go:73: action=apiCommandHandler command=hover
+2020/11/07 19:08:13 webserver.go:73: action=apiCommandHandler command=down
+2020/11/07 19:08:16 webserver.go:73: action=apiCommandHandler command=hover
+2020/11/07 19:08:18 webserver.go:73: action=apiCommandHandler command=counterClockwise
+2020/11/07 19:08:23 webserver.go:73: action=apiCommandHandler command=ceaseRotation
+2020/11/07 19:08:24 webserver.go:73: action=apiCommandHandler command=clockwise
+2020/11/07 19:08:38 webserver.go:73: action=apiCommandHandler command=land
+2020/11/07 19:09:02 robot.go:203: Stopping Robot tello ...
