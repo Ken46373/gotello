@@ -9,6 +9,7 @@ import (
 	"log"
 	"net/http"
 	"regexp"
+	"strconv"
 )
 
 var appContext struct {
@@ -68,6 +69,18 @@ func apiMakeHandler(fn func(w http.ResponseWriter, r *http.Request)) http.Handle
 	}
 }
 
+func getSpeed(r *http.Request) int {
+	strSpeed := r.FormValue("speed")
+	if strSpeed == "" {
+		return models.DefaultSpeed
+	}
+	speed, err := strconv.Atoi(strSpeed)
+	if err != nil {
+		return models.DefaultSpeed
+	}
+	return speed
+}
+
 func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 	command := r.FormValue("command")
 	log.Printf("action=apiCommandHandler command=%s", command)
@@ -97,6 +110,8 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 		drone.Right(drone.Speed)
 	case "backward":
 		drone.Backward(drone.Speed)
+	case "speed":
+		drone.Speed = getSpeed(r)
 	}
 	APIResponse(w, "OK", http.StatusOK)
 }

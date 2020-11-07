@@ -45,3 +45,14 @@
 2020/11/07 19:08:24 webserver.go:73: action=apiCommandHandler command=clockwise
 2020/11/07 19:08:38 webserver.go:73: action=apiCommandHandler command=land
 2020/11/07 19:09:02 robot.go:203: Stopping Robot tello ...
+2020/11/07 19:17:05 webserver.go:86: action=apiCommandHandler command=takeOff
+2020/11/07 19:17:09 webserver.go:86: action=apiCommandHandler command=land
+2020/11/07 19:17:36 webserver.go:86: action=apiCommandHandler command=takeOff
+2020/11/07 19:17:43 webserver.go:86: action=apiCommandHandler command=speed
+2020/11/07 19:17:44 webserver.go:86: action=apiCommandHandler command=clockwise
+2020/11/07 19:17:47 webserver.go:86: action=apiCommandHandler command=ceaseRotation
+2020/11/07 19:17:50 webserver.go:86: action=apiCommandHandler command=speed
+2020/11/07 19:17:52 webserver.go:86: action=apiCommandHandler command=clockwise
+2020/11/07 19:17:54 webserver.go:86: action=apiCommandHandler command=ceaseRotation
+2020/11/07 19:17:57 webserver.go:86: action=apiCommandHandler command=speed
+2020/11/07 19:17:59 webserver.go:86: action=apiCommandHandler command=land

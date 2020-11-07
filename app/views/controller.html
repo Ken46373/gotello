@@ -16,6 +16,15 @@
             console.log({action: 'sendCommand', params: params, json: json, status: 'fail'})
         }, 'json')
     }
+
+    $(document).on('pageinit', function() {
+        $('#slider-speed').on('slidestop', function(event){
+            let params = {
+                speed: $('#slider-speed').val(),
+            }
+            sendCommand('speed', params)
+        });
+    });
 </script>
 
 <div class="controller-box">
@@ -73,4 +82,9 @@
         </td>
     </table>
 </div>
+
+<div class="controller-box">
+    <h3>Speed</h3>
+    <input type="range" name="slider-2" id="slider-speed" data-hightlight="true" min="0" max="100" value="10">
+ </div>
 {{ end }}
