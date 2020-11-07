@@ -110,8 +110,20 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 		drone.Right(drone.Speed)
 	case "backward":
 		drone.Backward(drone.Speed)
+	case "frontFlip":
+		drone.FrontFlip()
+	case "leftFlip":
+		drone.LeftFlip()
+	case "rightFlip":
+		drone.RightFlip()
+	case "backFlip":
+		drone.BackFlip()
 	case "speed":
 		drone.Speed = getSpeed(r)
+
+	default:
+		APIResponse(w, "Not found", http.StatusNotFound)
+		return
 	}
 	APIResponse(w, "OK", http.StatusOK)
 }

@@ -87,4 +87,15 @@
     <h3>Speed</h3>
     <input type="range" name="slider-2" id="slider-speed" data-hightlight="true" min="0" max="100" value="10">
  </div>
+
+ <div class="controller-box">
+    <h3>Flip</h3>
+    <div data-role="controlgroup" data-type="horizontal">
+        <a href="#" data-role="button" data-inline="true" onclick="sendCommand('frontFlip'); return false;">Front</a>
+        <a href="#" data-role="button" data-inline="true" onclick="sendCommand('leftFlip'); return false;">Left</a>
+        <a href="#" data-role="button" data-inline="true" onclick="sendCommand('rightFlip'); return false;">Right</a>
+        <a href="#" data-role="button" data-inline="true" onclick="sendCommand('backFlip'); return false;">Back</a>
+    </div>
+</div>
+
 {{ end }}
