@@ -1,6 +1,7 @@
 package models
 
 import (
+	"log"
 	"time"
 
 	"gobot.io/x/gobot"
@@ -31,7 +32,21 @@ func NewDroneManager() *DroneManager {
 		isPatrolling: false,
 	}
 	work := func() {
-		// TODO
+		drone.On(tello.ConnectedEvent, func(data interface{}) {
+			log.Println("Connected")
+			drone.StartVideo()
+			drone.SetVideoEncoderRate(tello.VideoBitRateAuto)
+			drone.SetExposure(0)
+
+			gobot.Every(100*time.Millisecond, func() {
+				drone.StartVideo()
+			})
+		})
+
+		drone.On(tello.VideoFrameEvent, func(data interface{}) {
+			pkt := data.([]byte)
+			log.Println(pkt)
+		})
 	}
 	robot := gobot.NewRobot("tello", []gobot.Connection{}, []gobot.Device{drone}, work)
 	go robot.Start()
