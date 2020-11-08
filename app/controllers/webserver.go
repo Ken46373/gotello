@@ -126,6 +126,10 @@ func apiCommandHandler(w http.ResponseWriter, r *http.Request) {
 		drone.StartPatrol()
 	case "stopPatrol":
 		drone.StopPatrol()
+	case "faceDetectTrack":
+		drone.EnableFaceDetectTracking()
+	case "stopFaceDetectTrack":
+		drone.DisableFaceDetectTracking()
 	case "speed":
 		drone.Speed = getSpeed(r)
 
