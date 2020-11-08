@@ -11,10 +11,9 @@ import (
 	"time"
 
 	"github.com/hybridgroup/mjpeg"
-	"gocv.io/x/gocv"
-
 	"gobot.io/x/gobot"
 	"gobot.io/x/gobot/platforms/dji/tello"
+	"gocv.io/x/gocv"
 	"golang.org/x/sync/semaphore"
 )
 
@@ -150,6 +149,7 @@ func (d *DroneManager) StreamVideo() {
 		defer classifier.Close()
 		if !classifier.Load(faceDetectXMLFile) {
 			log.Printf("Error reading cascade file: %v\n", faceDetectXMLFile)
+			return
 		}
 		blue := color.RGBA{0, 0, 255, 0}
 
@@ -167,7 +167,7 @@ func (d *DroneManager) StreamVideo() {
 			if d.faceDetectTrackingOn {
 				d.StopPatrol()
 				rects := classifier.DetectMultiScale(img)
-				log.Printf("found %d faces \n", len(rects))
+				log.Printf("found %d faces\n", len(rects))
 
 				if len(rects) == 0 {
 					d.Hover()
@@ -179,8 +179,8 @@ func (d *DroneManager) StreamVideo() {
 
 					faceWidth := r.Max.X - r.Min.X
 					faceHeight := r.Max.Y - r.Min.Y
-					faceCenterX := r.Min.X - (faceWidth / 2)
-					faceCenterY := r.Min.Y - (faceHeight / 2)
+					faceCenterX := r.Min.X + (faceWidth / 2)
+					faceCenterY := r.Min.Y + (faceHeight / 2)
 					faceArea := faceWidth * faceHeight
 					diffX := frameCenterX - faceCenterX
 					diffY := frameCenterY - faceCenterY
