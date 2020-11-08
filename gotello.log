@@ -56,3 +56,19 @@
 2020/11/07 19:17:54 webserver.go:86: action=apiCommandHandler command=ceaseRotation
 2020/11/07 19:17:57 webserver.go:86: action=apiCommandHandler command=speed
 2020/11/07 19:17:59 webserver.go:86: action=apiCommandHandler command=land
+2020/11/07 19:27:54 robot.go:203: Stopping Robot tello ...
+2020/11/08 14:20:22 webserver.go:86: action=apiCommandHandler command=takeOff
+2020/11/08 14:20:32 webserver.go:86: action=apiCommandHandler command=frontFlip
+2020/11/08 14:20:34 webserver.go:86: action=apiCommandHandler command=backFlip
+2020/11/08 14:20:37 webserver.go:86: action=apiCommandHandler command=backFlip
+2020/11/08 14:20:40 webserver.go:86: action=apiCommandHandler command=land
+2020/11/08 14:20:48 webserver.go:86: action=apiCommandHandler command=takeOff
+2020/11/08 14:20:53 webserver.go:86: action=apiCommandHandler command=backward
+2020/11/08 14:20:57 webserver.go:86: action=apiCommandHandler command=hover
+2020/11/08 14:21:01 webserver.go:86: action=apiCommandHandler command=bounce
+2020/11/08 14:21:07 webserver.go:86: action=apiCommandHandler command=hover
+2020/11/08 14:21:10 webserver.go:86: action=apiCommandHandler command=land
+2020/11/08 14:21:14 webserver.go:86: action=apiCommandHandler command=land
+2020/11/08 14:21:18 webserver.go:86: action=apiCommandHandler command=bounce
+2020/11/08 14:21:21 webserver.go:86: action=apiCommandHandler command=land
+2020/11/08 14:21:27 robot.go:203: Stopping Robot tello ...
