@@ -87,7 +87,7 @@ func NewDroneManager() *DroneManager {
 		})
 	}
 	robot := gobot.NewRobot("tello", []gobot.Connection{}, []gobot.Device{drone}, work)
-	go robot.Start()
+	go robot.Start(false)
 	time.Sleep(WaitDroneStartSec * time.Second)
 	return droneManager
 }
